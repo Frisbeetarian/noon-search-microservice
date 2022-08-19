@@ -7,8 +7,8 @@
     "start": "nodemon ./index.js"
   },
   "dependencies": {
-    "@noon/rabbit-mq-rpc": "^0.0.10",
-    "@elastic/elasticsearch": "^8.2.1",
+    "@elastic/elasticsearch": "^7.17.0",
+    "@noon/rabbit-mq-rpc": "^0.0.19",
     "nodemon": "^2.0.19"
   }
 }
