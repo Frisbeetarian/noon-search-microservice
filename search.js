@@ -8,6 +8,18 @@ let client = new Client({
 
 async function search(index, params) {
   switch (index) {
+    case "INDEX_PROFILE": {
+      console.log("index in index profile:", index);
+      console.log("params in index profile:", params);
+
+      await client.index({
+        index: "profiles",
+        body: {
+          profile: params.raw[0],
+        },
+      });
+      return null;
+    }
     case "SEARCH_FOR_PROFILE": {
       console.log("entered search");
       console.log("index:", index, params);
@@ -40,7 +52,8 @@ async function search(index, params) {
             },
           },
         });
-        console.log(body.hits.hits);
+
+        // console.log(body.hits.hits);
 
         await rpcClient.returnEsResult().returnProfile(body.hits.hits);
 
