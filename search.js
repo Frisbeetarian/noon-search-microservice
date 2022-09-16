@@ -10,15 +10,88 @@ async function search(index, params) {
   switch (index) {
     case "INDEX_PROFILE": {
       console.log("index in index profile:", index);
-      console.log("params in index profile:", params);
+      console.log("params in index profile:", params.profile);
+      const profile = params.profile;
 
-      await client.index({
-        index: "profiles",
-        body: {
-          profile: params.raw[0],
-        },
-      });
+      try {
+        await client.index({
+          index: "profiles",
+          id: profile.uuid,
+          body: {
+            profile: params.profile.raw[0],
+          },
+        });
+      } catch (e) {
+        console.log("error:", e);
+      }
+
       return null;
+    }
+    case "UPDATE_PROFILE": {
+      console.log("index in update profile:", index);
+      console.log("index in update profile:", params.index);
+      console.log("uuid in update profile:", params.senderUuid);
+      console.log(
+        "recipient profile in update profile:",
+        params.recipientProfile
+      );
+
+      try {
+        // const document = await client.get({
+        //   index: "profiles",
+        //   id: params.uuid,
+        // });
+
+        await client.update({
+          index: "profiles",
+          id: params.senderUuid,
+          body: {
+            friendshipRequests: [params.recipientProfile],
+          },
+        });
+
+        // console.log("profile in update profile:", document);
+
+        // await client.update({
+        //   index: "profiles",
+        //
+        //   body: {
+        //     profile,
+        //   },
+        // });
+      } catch (e) {
+        console.log("error:", e);
+      }
+
+      return null;
+    }
+    case "SEARCH_FOR_PROFILE_BY_USERNAME": {
+      const username = params.username;
+      console.log("username in search for profile by username", username);
+
+      try {
+        const { body } = await client.search({
+          index: "profiles",
+          body: {
+            query: {
+              match: { "profile.username": username },
+            },
+          },
+        });
+
+        console.log("search results:", body.hits.hits[0]._source.profile);
+
+        await rpcClient
+          .returnEsResult()
+          .returnProfile(body.hits.hits[0]._source.profile);
+
+        // console.log('response from es:', response)
+        if (body.hits.hits) {
+          return body.hits.hits[0]._source.profile;
+        } else return null;
+      } catch (e) {
+        console.log("error:", e);
+      }
     }
     case "SEARCH_FOR_PROFILE": {
       console.log("entered search");
@@ -34,7 +107,7 @@ async function search(index, params) {
         //   },
         // });
 
-        await client.indices.refresh({ index: "noon-profiles" });
+        // await client.indices.refresh({ index: "profiles" });
 
         // Let's search!
         // const result = await client.search({
@@ -45,21 +118,23 @@ async function search(index, params) {
         // });
 
         const { body } = await client.search({
-          index: "noon-profiles",
+          index: "profiles",
           body: {
             query: {
-              match: { quote: "lezim ye3la2." },
+              match: { "profile.uuid": profileUuid },
             },
           },
         });
 
-        // console.log(body.hits.hits);
+        console.log("search results:", body.hits.hits[0]._source.profile);
 
-        await rpcClient.returnEsResult().returnProfile(body.hits.hits);
+        await rpcClient
+          .returnEsResult()
+          .returnProfile(body.hits.hits[0]._source.profile);
 
         // console.log('response from es:', response)
         if (body.hits.hits) {
-          return body.hits.hits;
+          return body.hits.hits[0]._source.profile;
         } else return null;
       } catch (e) {
         console.log("error:", e);
