@@ -1,6 +1,6 @@
 {
   "name": "search-microservice",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "main": "index.js",
   "license": "MIT",
   "scripts": {

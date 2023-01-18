@@ -79,14 +79,14 @@ async function search(index, params) {
           },
         });
 
-        console.log("search results:", body.hits.hits[0]._source.profile);
+        if (body.hits.hits[0]._source.profile) {
+          console.log("search results:", body.hits.hits[0]._source.profile);
 
-        await rpcClient
-          .returnEsResult()
-          .returnProfile(body.hits.hits[0]._source.profile);
+          await rpcClient
+            .returnEsResult()
+            .returnProfile(body.hits.hits[0]._source.profile);
 
-        // console.log('response from es:', response)
-        if (body.hits.hits) {
+          // console.log('response from es:', response)
           return body.hits.hits[0]._source.profile;
         } else return null;
       } catch (e) {
