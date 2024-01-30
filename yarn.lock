@@ -2,43 +2,68 @@
 # yarn lockfile v1
 
 
-"@elastic/elasticsearch@^7.17.0":
-  version "7.17.0"
-  resolved "http://localhost:4873/@elastic%2felasticsearch/-/elasticsearch-7.17.0.tgz"
-  integrity sha512-5QLPCjd0uLmLj1lSuKSThjNpq39f6NmlTy9ROLFwG5gjyTgpwSqufDeYG/Fm43Xs05uF7WcscoO7eguI3HuuYA==
+"@acuminous/bitsyntax@^0.1.2":
+  version "0.1.2"
+  resolved "http://localhost:4873/@acuminous/bitsyntax/-/bitsyntax-0.1.2.tgz#e0b31b9ee7ad1e4dd840c34864327c33d9f1f653"
+  integrity sha512-29lUK80d1muEQqiUsSo+3A0yP6CdspgC95EnKBMi22Xlwt79i/En4Vr67+cXhU+cZjbti3TgGGC5wy1stIywVQ==
   dependencies:
-    debug "^4.3.1"
-    hpagent "^0.1.1"
+    buffer-more-ints "~1.0.0"
+    debug "^4.3.4"
+    safe-buffer "~5.1.2"
+
+"@elastic/elasticsearch@^8.11.0":
+  version "8.11.0"
+  resolved "http://localhost:4873/@elastic/elasticsearch/-/elasticsearch-8.11.0.tgz#6cc62f29cd139740b4f69d30f76a58a093befc34"
+  integrity sha512-1UEQFdGLuKdROLJnMTjegasRM3X9INm/PVADoIVgdTfuv6DeJ17UMuNwYSkCrLrC0trLjjGV4YganpbJJX/VLg==
+  dependencies:
+    "@elastic/transport" "^8.4.0"
+    tslib "^2.4.0"
+
+"@elastic/transport@^8.4.0":
+  version "8.4.0"
+  resolved "http://localhost:4873/@elastic/transport/-/transport-8.4.0.tgz#e1ec05f7a2857162c161e2c97008f9b21301a673"
+  integrity sha512-Yb3fDa7yGD0ca3uMbL64M3vM1cE5h5uHmBcTjkdB4VpCasRNKSd09iDpwqX8zX1tbBtxcaKYLceKthWvPeIxTw==
+  dependencies:
+    debug "^4.3.4"
+    hpagent "^1.0.0"
     ms "^2.1.3"
     secure-json-parse "^2.4.0"
+    tslib "^2.4.0"
+    undici "^5.22.1"
 
-"@noon/rabbit-mq-rpc@^0.0.19":
-  version "0.0.19"
-  resolved "http://localhost:4873/@noon%2frabbit-mq-rpc/-/rabbit-mq-rpc-0.0.19.tgz#113adc0cedb5992b5cf8a715181aecb3cfc52587"
-  integrity sha512-ZOqR6t4783cW/X2bGYTO52t5GoxwEWwtfCOyC3DEuhsXCLUA2DXN3dVW6hvImXW33OjDTIyLFIXk5nhEO+xfPw==
+"@fastify/busboy@^2.0.0":
+  version "2.1.0"
+  resolved "http://localhost:4873/@fastify/busboy/-/busboy-2.1.0.tgz#0709e9f4cb252351c609c6e6d8d6779a8d25edff"
+  integrity sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==
+
+"@noon/rabbit-mq-rpc@^0.0.33-alpha":
+  version "0.0.33-alpha"
+  resolved "http://localhost:4873/@noon/rabbit-mq-rpc/-/rabbit-mq-rpc-0.0.33-alpha.tgz#878c80f7a87a7aee802eecb06cb1439b25f694d1"
+  integrity sha512-R2uPQYznPJa4re9qhia1WsaWzdMUX6O4oCwEpXb70JhrKG/U/DOi0ez1khqfGaHzwEBIbFUdD0XBV0MNMHZTxg==
   dependencies:
-    amqp-connection-manager "^4.1.6"
-    amqplib "^0.10.2"
-    uuid "^8.3.2"
+    amqp-connection-manager "^4.1.14"
+    amqplib "^0.10.3"
+    prettier "^3.2.2"
+    uuid "^9.0.1"
 
 abbrev@1:
   version "1.1.1"
   resolved "http://localhost:4873/abbrev/-/abbrev-1.1.1.tgz"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-amqp-connection-manager@^4.1.6:
-  version "4.1.6"
-  resolved "http://localhost:4873/amqp-connection-manager/-/amqp-connection-manager-4.1.6.tgz"
-  integrity sha512-RFbVdA6COw+968HpZAeR4KJtgcBeKR626MTQjgHRwolaHry4Gg4Z7dJHwHerqlYbv5dAP8VB29AXYwu+XZP3JQ==
+amqp-connection-manager@^4.1.14:
+  version "4.1.14"
+  resolved "http://localhost:4873/amqp-connection-manager/-/amqp-connection-manager-4.1.14.tgz#603d20ffbc6d90fe464c2a08600c7644c9475342"
+  integrity sha512-1km47dIvEr0HhMUazqovSvNwIlSvDX2APdUpULaINtHpiki1O+cLRaTeXb/jav4OLtH+k6GBXx5gsKOT9kcGKQ==
   dependencies:
     promise-breaker "^6.0.0"
 
-amqplib@^0.10.2:
-  version "0.10.2"
-  resolved "http://localhost:4873/amqplib/-/amqplib-0.10.2.tgz"
-  integrity sha512-l8U1thHT5QRNJF6Fv6ZveMeHV/bl+3UROQBn/cLOwRfeV3F0syZxkjnumJCG4NMvqfy9wT7mCgwpPSq2fApRpA==
+amqplib@^0.10.3:
+  version "0.10.3"
+  resolved "http://localhost:4873/amqplib/-/amqplib-0.10.3.tgz#e186a2f74521eb55ec54db6d25ae82c29c1f911a"
+  integrity sha512-UHmuSa7n8vVW/a5HGh2nFPqAEr8+cD4dEZ6u9GjP91nHfr1a54RyAKyra7Sb5NH7NBKOUlyQSMXIp0qAixKexw==
   dependencies:
-    bitsyntax "~0.1.0"
+    "@acuminous/bitsyntax" "^0.1.2"
     buffer-more-ints "~1.0.0"
     readable-stream "1.x >=1.1.9"
     url-parse "~1.5.10"
@@ -60,15 +85,6 @@ binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "http://localhost:4873/binary-extensions/-/binary-extensions-2.2.0.tgz"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
-
-bitsyntax@~0.1.0:
-  version "0.1.0"
-  resolved "http://localhost:4873/bitsyntax/-/bitsyntax-0.1.0.tgz"
-  integrity sha512-ikAdCnrloKmFOugAfxWws89/fPc+nw0OOG1IzIE72uSOg/A3cYptKCjSUhDTuj7fhsJtzkzlv7l3b8PzRHLN0Q==
-  dependencies:
-    buffer-more-ints "~1.0.0"
-    debug "~2.6.9"
-    safe-buffer "~5.1.2"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -115,26 +131,12 @@ core-util-is@~1.0.0:
   resolved "http://localhost:4873/core-util-is/-/core-util-is-1.0.3.tgz"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-debug@^3.2.7:
-  version "3.2.7"
-  resolved "http://localhost:4873/debug/-/debug-3.2.7.tgz"
-  integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
-  dependencies:
-    ms "^2.1.1"
-
-debug@^4.3.1:
+debug@^4, debug@^4.3.4:
   version "4.3.4"
-  resolved "http://localhost:4873/debug/-/debug-4.3.4.tgz"
+  resolved "http://localhost:4873/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   dependencies:
     ms "2.1.2"
-
-debug@~2.6.9:
-  version "2.6.9"
-  resolved "http://localhost:4873/debug/-/debug-2.6.9.tgz"
-  integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
-  dependencies:
-    ms "2.0.0"
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -160,10 +162,10 @@ has-flag@^3.0.0:
   resolved "http://localhost:4873/has-flag/-/has-flag-3.0.0.tgz"
   integrity sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==
 
-hpagent@^0.1.1:
-  version "0.1.2"
-  resolved "http://localhost:4873/hpagent/-/hpagent-0.1.2.tgz"
-  integrity sha512-ePqFXHtSQWAFXYmj+JtOTHr84iNrII4/QRlAAPPE+zqnKy4xJo7Ie1Y4kC7AdB+LxLxSTTzBMASsEcy0q8YyvQ==
+hpagent@^1.0.0:
+  version "1.2.0"
+  resolved "http://localhost:4873/hpagent/-/hpagent-1.2.0.tgz#0ae417895430eb3770c03443456b8d90ca464903"
+  integrity sha512-A91dYTeIB6NoXG+PxTQpCCDDnfHsW9kc06Lvpu1TEe9gnd6ZFeiBoRO9JvzEv6xK7EX97/dUE8g/vBMTqTS3CA==
 
 ignore-by-default@^1.0.1:
   version "1.0.1"
@@ -204,40 +206,42 @@ isarray@0.0.1:
   resolved "http://localhost:4873/isarray/-/isarray-0.0.1.tgz"
   integrity sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==
 
-minimatch@^3.0.4:
+lru-cache@^6.0.0:
+  version "6.0.0"
+  resolved "http://localhost:4873/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
+  integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+  dependencies:
+    yallist "^4.0.0"
+
+minimatch@^3.1.2:
   version "3.1.2"
-  resolved "http://localhost:4873/minimatch/-/minimatch-3.1.2.tgz"
+  resolved "http://localhost:4873/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
-
-ms@2.0.0:
-  version "2.0.0"
-  resolved "http://localhost:4873/ms/-/ms-2.0.0.tgz"
-  integrity sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==
 
 ms@2.1.2:
   version "2.1.2"
   resolved "http://localhost:4873/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-ms@^2.1.1, ms@^2.1.3:
+ms@^2.1.3:
   version "2.1.3"
   resolved "http://localhost:4873/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-nodemon@^2.0.19:
-  version "2.0.19"
-  resolved "http://localhost:4873/nodemon/-/nodemon-2.0.19.tgz"
-  integrity sha512-4pv1f2bMDj0Eeg/MhGqxrtveeQ5/G/UVe9iO6uTZzjnRluSA4PVWf8CW99LUPwGB3eNIA7zUFoP77YuI7hOc0A==
+nodemon@^3.0.2:
+  version "3.0.2"
+  resolved "http://localhost:4873/nodemon/-/nodemon-3.0.2.tgz#222dd0de79fc7b7b3eedba422d2b9e5fc678621e"
+  integrity sha512-9qIN2LNTrEzpOPBaWHTm4Asy1LxXLSickZStAQ4IZe7zsoIpD/A7LWxhZV3t4Zu352uBcqVnRsDXSMR2Sc3lTA==
   dependencies:
     chokidar "^3.5.2"
-    debug "^3.2.7"
+    debug "^4"
     ignore-by-default "^1.0.1"
-    minimatch "^3.0.4"
+    minimatch "^3.1.2"
     pstree.remy "^1.1.8"
-    semver "^5.7.1"
-    simple-update-notifier "^1.0.7"
+    semver "^7.5.3"
+    simple-update-notifier "^2.0.0"
     supports-color "^5.5.0"
     touch "^3.1.0"
     undefsafe "^2.0.5"
@@ -258,6 +262,11 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   version "2.3.1"
   resolved "http://localhost:4873/picomatch/-/picomatch-2.3.1.tgz"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
+
+prettier@^3.2.2:
+  version "3.2.2"
+  resolved "http://localhost:4873/prettier/-/prettier-3.2.2.tgz#96e580f7ca9c96090ad054616c0c4597e2844b65"
+  integrity sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==
 
 promise-breaker@^6.0.0:
   version "6.0.0"
@@ -306,22 +315,19 @@ secure-json-parse@^2.4.0:
   resolved "http://localhost:4873/secure-json-parse/-/secure-json-parse-2.5.0.tgz"
   integrity sha512-ZQruFgZnIWH+WyO9t5rWt4ZEGqCKPwhiw+YbzTwpmT9elgLrLcfuyUiSnwwjUiVy9r4VM3urtbNF1xmEh9IL2w==
 
-semver@^5.7.1:
-  version "5.7.1"
-  resolved "http://localhost:4873/semver/-/semver-5.7.1.tgz"
-  integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
-
-semver@~7.0.0:
-  version "7.0.0"
-  resolved "http://localhost:4873/semver/-/semver-7.0.0.tgz"
-  integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
-
-simple-update-notifier@^1.0.7:
-  version "1.0.7"
-  resolved "http://localhost:4873/simple-update-notifier/-/simple-update-notifier-1.0.7.tgz"
-  integrity sha512-BBKgR84BJQJm6WjWFMHgLVuo61FBDSj1z/xSFUIozqO6wO7ii0JxCqlIud7Enr/+LhlbNI0whErq96P2qHNWew==
+semver@^7.5.3:
+  version "7.5.4"
+  resolved "http://localhost:4873/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
+  integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
   dependencies:
-    semver "~7.0.0"
+    lru-cache "^6.0.0"
+
+simple-update-notifier@^2.0.0:
+  version "2.0.0"
+  resolved "http://localhost:4873/simple-update-notifier/-/simple-update-notifier-2.0.0.tgz#d70b92bdab7d6d90dfd73931195a30b6e3d7cebb"
+  integrity sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==
+  dependencies:
+    semver "^7.5.3"
 
 string_decoder@~0.10.x:
   version "0.10.31"
@@ -349,10 +355,22 @@ touch@^3.1.0:
   dependencies:
     nopt "~1.0.10"
 
+tslib@^2.4.0:
+  version "2.6.2"
+  resolved "http://localhost:4873/tslib/-/tslib-2.6.2.tgz#703ac29425e7b37cd6fd456e92404d46d1f3e4ae"
+  integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
+
 undefsafe@^2.0.5:
   version "2.0.5"
   resolved "http://localhost:4873/undefsafe/-/undefsafe-2.0.5.tgz"
   integrity sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==
+
+undici@^5.22.1:
+  version "5.28.2"
+  resolved "http://localhost:4873/undici/-/undici-5.28.2.tgz#fea200eac65fc7ecaff80a023d1a0543423b4c91"
+  integrity sha512-wh1pHJHnUeQV5Xa8/kyQhO7WFa8M34l026L5P/+2TYiakvGy5Rdc8jWZVyG7ieht/0WgJLEd3kcU5gKx+6GC8w==
+  dependencies:
+    "@fastify/busboy" "^2.0.0"
 
 url-parse@~1.5.10:
   version "1.5.10"
@@ -362,7 +380,12 @@ url-parse@~1.5.10:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
-uuid@^8.3.2:
-  version "8.3.2"
-  resolved "http://localhost:4873/uuid/-/uuid-8.3.2.tgz"
-  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+uuid@^9.0.1:
+  version "9.0.1"
+  resolved "http://localhost:4873/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
+  integrity sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==
+
+yallist@^4.0.0:
+  version "4.0.0"
+  resolved "http://localhost:4873/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
+  integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==

@@ -1,9 +1,4 @@
-// const { RPCServer } = require('@myki/rabbitmqrpc/server');
-
-// const config = require('./config');
-// const logger = require('./lib/logger')('index');
-// const taskHandler = require('./lib/taskHandler');
-const { RPCServer } = require("@noon/rabbit-mq-rpc/server");
+const { RPCServer } = require("@noon/rabbit-mq-rpc");
 const search = require("./search");
 
 const connectionObject = {
@@ -23,7 +18,7 @@ async function establishRPCConsumer() {
       hostId: "localhost",
       queue: "rpc_queue.noon.search",
       handleMessage: (index, params) => {
-        console.log("RPC_SEARCH_RECEIVED", { index });
+        console.log("RPC_SEARCH_RECEIVED", { index, params });
         return search(index, params);
       },
     });

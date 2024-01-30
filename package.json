@@ -4,11 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^7.17.0",
-    "@noon/rabbit-mq-rpc": "^0.0.19",
-    "nodemon": "^2.0.19"
+    "@elastic/elasticsearch": "^8.11.0",
+    "@noon/rabbit-mq-rpc": "^0.0.33-alpha",
+    "nodemon": "^3.0.2"
   }
 }

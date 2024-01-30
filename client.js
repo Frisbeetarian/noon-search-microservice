@@ -1,4 +1,4 @@
-const { RPCClient } = require("@noon/rabbit-mq-rpc/client");
+const { RPCClient } = require("@noon/rabbit-mq-rpc");
 
 const connectionObject = {
   protocol: "amqp",
@@ -54,12 +54,12 @@ function returnEsResult() {
   const channel = QUEUES.SEARCH_SERVER.channel;
 
   return {
-    async returnProfile(profile) {
+    async returnProfile(profiles, senderUuid) {
       try {
         const response = await searchRPCRequest(
           channel,
           "RPC_SEARCH_RESULTS_RECEIVED",
-          profile
+          { profiles, senderUuid }
         );
         return response;
       } catch (e) {
