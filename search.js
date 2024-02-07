@@ -4,10 +4,6 @@ const rpcClient = require("./client");
 
 let client = new Client({
   node: "http://localhost:9200",
-  // auth: {
-  //   username: "elastic",
-  //   password: "pgAfbSlbzNmUA=mOsL_D",
-  // },
 });
 
 async function search(index, params) {

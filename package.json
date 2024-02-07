@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.11.0",
-    "@noon/rabbit-mq-rpc": "^0.0.33-alpha",
+    "@noon/rabbit-mq-rpc": "^0.0.34-alpha",
     "nodemon": "^3.0.2"
   }
 }
