@@ -2,7 +2,9 @@
   "name": "search-microservice",
   "version": "0.0.1-alpha",
   "main": "index.js",
+  "author": "Muhammad <mohamad.sleimanhaidar@gmail.com>",
   "license": "MIT",
+  "private": false,
   "scripts": {
     "start": "nodemon index.js"
   },

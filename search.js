@@ -25,7 +25,7 @@ async function search(index, params) {
         console.log("error:", e);
       }
 
-      return null;
+      break;
     }
     case "UPDATE_PROFILE": {
       try {
@@ -40,7 +40,7 @@ async function search(index, params) {
         console.log("error:", e);
       }
 
-      return null;
+      break;
     }
     case "SEARCH_FOR_PROFILE_BY_USERNAME": {
       const username = params.username;
@@ -55,15 +55,15 @@ async function search(index, params) {
 
         if (response.hits && response.hits.hits.length > 0) {
           const profiles = response.hits.hits.map((hit) => hit._source.profile);
-          console.log("profiles", profiles);
-
           await rpcClient.returnEsResult().returnProfile(profiles, senderUuid);
-          return null;
-          // return response.hits.hits[0]._source.profile;
-        } else return null;
+        } else {
+          await rpcClient.returnEsResult().returnProfile([], senderUuid);
+        }
       } catch (e) {
         console.log("error:", e);
       }
+
+      break;
     }
     case "SEARCH_FOR_PROFILE": {
       const profileUuid = params.profileUuid;
@@ -91,10 +91,12 @@ async function search(index, params) {
       } catch (e) {
         console.log("error:", e);
       }
+
+      break;
     }
     case "SEARCH_FOR_PROFILES": {
       const { profileUuids } = params;
-      return null;
+      break;
     }
     default: {
       return null;
