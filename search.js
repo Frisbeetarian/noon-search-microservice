@@ -53,6 +53,7 @@ async function search(index, params) {
           },
         });
 
+        console.log("response", response);
         if (response.hits && response.hits.hits.length > 0) {
           const profiles = response.hits.hits.map((hit) => hit._source.profile);
           await rpcClient.returnEsResult().returnProfile(profiles, senderUuid);
